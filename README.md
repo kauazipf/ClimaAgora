@@ -42,6 +42,6 @@ Aplicativo mobile em React Native que exibe a previsão do tempo com base na loc
 ## 📦 Instalação
 
 ```bash
-git clone https://github.com/seu-usuario/climaagora.git
+git clone https://github.com/kauazipf/ClimaAgora
 cd climaagora
 npm install
