@@ -27,18 +27,6 @@ Aplicativo mobile em React Native que exibe a previsão do tempo com base na loc
 
 ---
 
-## 📸 Prints
-
-### Tela Inicial
-
-<img src="./assets/screenshot-home.png" width="250" />
-
-### Tela de Clima
-
-<img src="./assets/screenshot-weather.png" width="250" />
-
----
-
 ## 👥 Autoria
 
 - **Nome:** Caetano Matos Penafiel 
