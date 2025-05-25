@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../types/NavigationTypes';
 import useLocation from '../hooks/useLocation';
 import { fetchWeather } from '../services/weatherService';
 
@@ -8,7 +10,7 @@ export default function WeatherScreen() {
   const { location, errorMsg } = useLocation();
   const [weather, setWeather] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     if (location) {
@@ -36,6 +38,10 @@ export default function WeatherScreen() {
 
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
         <Text style={styles.backButtonText}>Voltar para Início</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.mapButton} onPress={() => navigation.navigate('Mapa')}>
+        <Text style={styles.backButtonText}>Ver no Mapa</Text>
       </TouchableOpacity>
     </View>
   );
@@ -89,6 +95,14 @@ const styles = StyleSheet.create({
   },
   backButton: {
     marginTop: 30,
+    backgroundColor: '#028220',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    elevation: 2,
+  },
+  mapButton: {
+    marginTop: 10,
     backgroundColor: '#028220',
     paddingVertical: 12,
     paddingHorizontal: 24,
